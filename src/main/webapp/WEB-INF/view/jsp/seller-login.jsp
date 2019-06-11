@@ -1,5 +1,4 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <!DOCTYPE>
 <html>
 	<head>
@@ -15,27 +14,19 @@
 		</div>
 		
 		<div id="container">
-			<h3>Address Page</h3>
+			<h3>Login Page</h3>
 			
-			<form:form action="/addresses/${address.customer.customerId}/save" modelAttribute="address" method="POST">
+			<form:form action="/seller/authenticateSeller" modelAttribute="seller" method="POST">
 			
 			<table>
 				<tbody>
 					<tr>
-						<td><label>Address Line1:</label></td>
-						<td><form:input path="line1" /></td>
+						<td><label>Email Id:</label></td>
+						<td><form:input path="email" /></td>
 					</tr>
 					<tr>
-						<td><label>Address Line2:</label></td>
-						<td><form:input path="line2" /></td>
-					</tr>
-					<tr>
-						<td><label>City:</label></td>
-						<td><form:input path="city" /></td>
-					</tr>
-					<tr>
-						<td><label>State:</label></td>
-						<td><form:input path="state" /></td>
+						<td><label>Password:</label></td>
+						<td><form:input path="password" /></td>
 					</tr>
 					<tr>
 						<td><label></label></td>
@@ -45,7 +36,6 @@
 			</table>
 			</form:form>	
 			<div style="clear; both;"> </div>
-			
 		</div>	
 	</body>
 		

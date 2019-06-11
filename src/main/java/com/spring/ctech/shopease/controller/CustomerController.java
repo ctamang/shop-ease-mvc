@@ -1,6 +1,7 @@
 package com.spring.ctech.shopease.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,8 +65,8 @@ public class CustomerController {
 	}
 	
 	@GetMapping("{id}/addresses")
-	public List<Address> getAddresses(@PathVariable String id){
-		List<Address> addressList = customerService.findAddressesForCustomers(Integer.parseInt(id));
+	public Set<Address> getAddresses(@PathVariable String id){
+		Set<Address> addressList = customerService.findAddressesForCustomers(Integer.parseInt(id));
 		return addressList;
 	}
 	

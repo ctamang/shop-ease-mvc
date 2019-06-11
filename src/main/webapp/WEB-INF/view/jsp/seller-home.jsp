@@ -14,11 +14,11 @@
 		
 		<br><br>
 		
-		<a href="login">Login</a>
+		<a href="seller/login">Login</a>
 		
 		<br><br>
 		
-		<a href="registration">Register</a>
+		<a href="seller/registration">Register</a>
 		
 		<br><br>
 		

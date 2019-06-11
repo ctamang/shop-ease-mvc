@@ -15,27 +15,23 @@
 		</div>
 		
 		<div id="container">
-			<h3>Address Page</h3>
+			<h3>Add Item Page</h3>
 			
-			<form:form action="/addresses/${address.customer.customerId}/save" modelAttribute="address" method="POST">
+			<form:form action="/item/${sellerId}/save" modelAttribute="item" method="POST">
 			
 			<table>
 				<tbody>
 					<tr>
-						<td><label>Address Line1:</label></td>
-						<td><form:input path="line1" /></td>
+						<td><label>Item Name:</label></td>
+						<td><form:input path="itemName" /></td>
 					</tr>
 					<tr>
-						<td><label>Address Line2:</label></td>
-						<td><form:input path="line2" /></td>
+						<td><label>Item Description:</label></td>
+						<td><form:input path="itemDescription" /></td>
 					</tr>
 					<tr>
-						<td><label>City:</label></td>
-						<td><form:input path="city" /></td>
-					</tr>
-					<tr>
-						<td><label>State:</label></td>
-						<td><form:input path="state" /></td>
+						<td><label>Item Price:</label></td>
+						<td><form:input path="itemPrice" /></td>
 					</tr>
 					<tr>
 						<td><label></label></td>

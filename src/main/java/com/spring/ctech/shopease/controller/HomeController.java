@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.spring.ctech.shopease.entity.Customer;
+import com.spring.ctech.shopease.entity.Seller;
 import com.spring.ctech.shopease.service.CustomerService;
 
 @Controller
@@ -19,6 +20,11 @@ public class HomeController {
 	@GetMapping("/")
 	public String getHome(Model theModel) {
 		return "home";
+	}
+	
+	@GetMapping("/seller")
+	public String getHomeForSeller(Model theModel) {
+		return "seller-home";
 	}
 	
 	@GetMapping("/registration")

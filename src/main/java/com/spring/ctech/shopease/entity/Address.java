@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Address {
@@ -26,6 +27,10 @@ public class Address {
 	@ManyToOne(fetch=FetchType.LAZY,cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH} )
 	@JoinColumn(name="customer_id")
 	private Customer customer;
+	
+	@OneToOne(fetch=FetchType.LAZY,cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH} )
+	@JoinColumn(name="seller_id")
+	private Seller seller;
 	
 	public Address() {}
 	
@@ -52,6 +57,14 @@ public class Address {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public Seller getSeller() {
+		return seller;
+	}
+
+	public void setSeller(Seller seller) {
+		this.seller = seller;
 	}
 
 	public String getLine1() {

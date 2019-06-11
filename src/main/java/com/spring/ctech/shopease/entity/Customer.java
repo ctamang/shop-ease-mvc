@@ -1,7 +1,7 @@
 package com.spring.ctech.shopease.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -27,10 +27,10 @@ public class Customer {
 	private String contactNumber; 
 	
 	@OneToMany(fetch=FetchType.LAZY,  mappedBy="customer", cascade=CascadeType.ALL)
-	private List<Order> order;
+	private Set<Order> order;
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="customer", cascade=CascadeType.ALL)
-	private List<Address> address;
+	private Set<Address> address;
 	
 	public Customer() {
 	}
@@ -62,11 +62,11 @@ public class Customer {
 		this.contactNumber = contactNumber;
 	}
 
-	public List<Order> getOrder() {
+	public Set<Order> getOrder() {
 		return order;
 	}
 
-	public List<Address> getAddress() {
+	public Set<Address> getAddress() {
 		return address;
 	}
 
@@ -104,7 +104,7 @@ public class Customer {
 	
 	public void addAddress(Address tempAddress) {
 		if(address == null) {
-			address = new ArrayList<>();
+			address = new HashSet<>();
 		}
 		address.add(tempAddress);
 		tempAddress.setCustomer(this);
@@ -112,7 +112,7 @@ public class Customer {
 	
 	public void addOrder(Order theOrder) {
 		if(order == null) {
-			order = new ArrayList<>();
+			order = new HashSet<>();
 		}
 		order.add(theOrder);
 		theOrder.setCustomer(this);

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.ctech.shopease.entity.Customer;
+import com.spring.ctech.shopease.entity.Seller;
 import com.spring.ctech.shopease.service.CustomerService;
 
 @Controller
@@ -37,5 +38,4 @@ public class LoginController {
 		}
 		return "login";
 	}
-	
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.ctech.shopease.entity.Address;
 import com.spring.ctech.shopease.entity.Customer;
+import com.spring.ctech.shopease.entity.Seller;
 import com.spring.ctech.shopease.service.AddressService;
 
 @Controller
@@ -39,6 +40,13 @@ public class AddressController {
 		Customer customer = addressService.addAddress(Integer.parseInt(custId), Address);
 		theModel.addAttribute("customer", customer);
 		return "customer-home";
+	}
+	
+	@PostMapping("/{sellerId}/saveSellerAddress")
+	public String addSellerAddress(@ModelAttribute Address Address, @PathVariable Integer sellerId, Model theModel) {
+		Seller seller = addressService.addAddressOfSeller(sellerId, Address);
+		theModel.addAttribute("seller", seller);
+		return "seller-info-page";
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/")

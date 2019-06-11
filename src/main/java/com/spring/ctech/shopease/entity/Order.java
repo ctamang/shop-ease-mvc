@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity(name="order_table")
 public class Order {
 	
 	@Id
@@ -19,10 +19,10 @@ public class Order {
 	private String orderDescription;
 	
 	//private List<Item> itemsList;
+	
 	@ManyToOne(fetch=FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name="customer_id")
 	private Customer customer;
-	
 	
 	private String orderTotal;
 	

@@ -17,7 +17,7 @@
 		<div id="container">
 			<h3>Address Page</h3>
 			
-			<form:form action="/addresses/${address.customer.customerId}/save" modelAttribute="address" method="POST">
+			<form:form action="/addresses/${sellerId}/saveSellerAddress" modelAttribute="address" method="POST">
 			
 			<table>
 				<tbody>

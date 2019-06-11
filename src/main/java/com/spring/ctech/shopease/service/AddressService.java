@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ctech.shopease.entity.Address;
 import com.spring.ctech.shopease.entity.Customer;
+import com.spring.ctech.shopease.entity.Seller;
 import com.spring.ctech.shopease.repository.AddressRepository;
 import com.spring.ctech.shopease.repository.CustomerRepository;
+import com.spring.ctech.shopease.repository.SellerRepository;
 
 @Service
 public class AddressService {
@@ -18,6 +20,9 @@ public class AddressService {
 	
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	@Autowired
+	SellerRepository sellerRepository;
 	
 	public List<Address> getAllAddresss() {
 		return addressRepository.findAll();
@@ -34,6 +39,13 @@ public class AddressService {
 		return customer;
 	}
 
+	public Seller addAddressOfSeller(Integer sellerId, Address address) {
+		Seller seller = sellerRepository.findById(sellerId).get();
+		seller.setAddress(address);
+		addressRepository.save(address);
+		return seller;
+	}
+	
 	public void updateAddress(Address address) {
 		// TODO Auto-generated method stub
 		
@@ -48,5 +60,6 @@ public class AddressService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
